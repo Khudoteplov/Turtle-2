@@ -1,0 +1,72 @@
+import turtle
+
+fnt = open('font.txt', 'r')
+a = fnt.read()
+fnt.close()
+p=a.split('\n')
+c=[]
+for i in p:
+    c.append(i[1: -1])
+
+v=[]
+for i in range(len(c)-1):
+    b=c[i].split(', ')
+    v.append(tuple(map(int, b)))
+
+
+fnt.close()
+def q(x, y, s): 
+	turtle.penup()
+	turtle.goto(x, y)
+	if 0 in s:
+	    turtle.pendown()
+	turtle.goto(x-10, y)
+	turtle.penup()
+	if 1 in s:
+	    turtle.pendown()
+	turtle.goto(x-10, y-10)
+	turtle.pendown()
+	turtle.penup()
+	if 2 in s:
+	    turtle.pendown()
+	turtle.goto(x, y)
+	turtle.pendown()
+	turtle.penup()
+	if 3 in s:
+	    turtle.pendown()
+	turtle.goto(x, y-10)
+	turtle.pendown()
+	turtle.penup()
+	if 4 in s:
+	    turtle.pendown()
+	turtle.goto(x-10, y-10)
+	turtle.pendown()
+	turtle.penup()
+	if 5 in s:
+	    turtle.pendown()
+	turtle.goto(x-10, y-20)
+	turtle.pendown()
+	turtle.penup()
+	if 6 in s:
+	    turtle.pendown()
+	turtle.goto(x, y-10)
+	turtle.pendown()
+	turtle.penup()
+	if 7 in s:
+	    turtle.pendown()
+	turtle.goto(x, y-20)
+	turtle.pendown()
+	turtle.penup()
+	if 8 in s:
+	    turtle.pendown()
+	turtle.goto(x-10, y-20)
+	turtle.pendown()
+	turtle.penup()
+
+
+w=[1,4,1,7,0,0]
+x, y = 0, 0
+for i in w:
+    q(x, y, v[i])
+    x += 20
+
